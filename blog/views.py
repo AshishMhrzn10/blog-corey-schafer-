@@ -3,14 +3,6 @@ from .models import Post
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-# Create your views here.
-def home(request):
-    post = Post.objects.all()
-    context = {
-        'posts':post
-    }
-    return render(request, 'blog/home.html', context)
-
 
 class PostListView(ListView):
     model = Post
